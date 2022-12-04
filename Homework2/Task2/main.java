@@ -8,11 +8,22 @@ import java.io.IOException;
 public class main {
 
      public static Logger logger = Logger.getLogger(main.class.getName());
+     
+     /* Этот кусок кода вне функции почему-то не работает:
      FileHandler fh = new FileHandler("log.txt");
      logger.addHandler(fh);
+     public static SimpleFormatter sFormat = new SimpleFormatter();
+     fh.setFormatter(sFormat); 
+     */
     
     public static void main(String[] args) throws Exception {
         
+        //тот же кусок кода, но тут он уже работает:
+        
+        FileHandler fh = new FileHandler("log.txt");
+        logger.addHandler(fh);
+        SimpleFormatter sFormat = new SimpleFormatter();
+        fh.setFormatter(sFormat);
 
         int[] nums = new int[] { 4, 1, 2, 5, 7, 3 };
 
@@ -20,17 +31,17 @@ public class main {
 
         sb.append("input numbers: ");
         sb.append(Arrays.toString(nums));
-        logger.info(sb.toString());
+        logger.info(sb.toString()); //не понимаю почему он печатает в консоль, а не в файл как на лекции
 
         bubbleSort(nums);
 
-        // createLogFile ("C://LoggerDir", "log.txt");
+
 
     }
 
     public static void bubbleSort(int[] numbers) throws IOException {
 
-        logger.info("Start sorting");
+        logger.info("Start sorting"); //не понимаю, почему он печатает в консоль, а не в файл как на лекции
 
         int swap = 0;
         for (int i = numbers.length - 1; i >= 0; i--) {
@@ -45,33 +56,10 @@ public class main {
 
             }
 
-            logger.info(Arrays.toString(numbers));
+            logger.info(Arrays.toString(numbers)); //не понимаю, почему он печатает в консоль, а не в файл как на лекции
         }
 
-        logger.info("End sorting");
+        logger.info("End sorting"); //не понимаю, почему он печатает в консоль, а не в файл как на лекции
 
     }
-
-    // private static void createLogFile(String path, String logName) throws IOException {
-
-    //     // создаём папку для логгера
-
-    //     File logDir = new File(path);
-    //     boolean created = logDir.mkdir();
-
-    //     if (created) {
-    //         StringBuilder sb = new StringBuilder();
-    //         sb.append("Folder ' ").append(path).append(" ' has been created");
-    //         System.out.println(sb.toString());
-
-    //         // создаём файл логгера
-
-    //         File logFile = new File(path, logName);
-    //         created = logFile.createNewFile();
-    //         if (created)
-    //             System.out.println("File has been created");
-
-    //     } 
-
     }
-}
