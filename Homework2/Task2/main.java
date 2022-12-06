@@ -7,19 +7,20 @@ import java.io.IOException;
 
 public class main {
 
-     public static Logger logger = Logger.getLogger(main.class.getName());
-     
-     /* Этот кусок кода вне функции почему-то не работает:
-     FileHandler fh = new FileHandler("log.txt");
-     logger.addHandler(fh);
-     public static SimpleFormatter sFormat = new SimpleFormatter();
-     fh.setFormatter(sFormat); 
+    public static Logger logger = Logger.getLogger(main.class.getName());
+
+    /*
+     * Этот кусок кода вне функции почему-то не работает:
+     * FileHandler fh = new FileHandler("log.txt");
+     * logger.addHandler(fh);
+     * public static SimpleFormatter sFormat = new SimpleFormatter();
+     * fh.setFormatter(sFormat);
      */
-    
+
     public static void main(String[] args) throws Exception {
-        
-        //тот же кусок кода, но тут он уже работает:
-        
+
+        // тот же кусок кода, но тут он уже работает:
+
         FileHandler fh = new FileHandler("log.txt");
         logger.addHandler(fh);
         SimpleFormatter sFormat = new SimpleFormatter();
@@ -31,17 +32,15 @@ public class main {
 
         sb.append("input numbers: ");
         sb.append(Arrays.toString(nums));
-        logger.info(sb.toString()); //не понимаю почему он печатает в консоль, а не в файл как на лекции
+        logger.info(sb.toString());
 
         bubbleSort(nums);
-
-
 
     }
 
     public static void bubbleSort(int[] numbers) throws IOException {
 
-        logger.info("Start sorting"); //не понимаю, почему он печатает в консоль, а не в файл как на лекции
+        logger.info("Start sorting");
 
         int swap = 0;
         for (int i = numbers.length - 1; i >= 0; i--) {
@@ -56,10 +55,9 @@ public class main {
 
             }
 
-            logger.info(Arrays.toString(numbers)); //не понимаю, почему он печатает в консоль, а не в файл как на лекции
+            logger.info(Arrays.toString(numbers));
+
         }
-
-        logger.info("End sorting"); //не понимаю, почему он печатает в консоль, а не в файл как на лекции
-
+        logger.info("End sorting");
     }
-    }
+}

@@ -1,0 +1,18 @@
+дек. 04, 2022 5:41:23 PM main main
+INFO: input numbers: [4, 1, 2, 5, 7, 3]
+дек. 04, 2022 5:41:23 PM main bubbleSort
+INFO: Start sorting
+дек. 04, 2022 5:41:23 PM main bubbleSort
+INFO: [1, 2, 4, 5, 3, 7]
+дек. 04, 2022 5:41:23 PM main bubbleSort
+INFO: [1, 2, 4, 3, 5, 7]
+дек. 04, 2022 5:41:23 PM main bubbleSort
+INFO: [1, 2, 3, 4, 5, 7]
+дек. 04, 2022 5:41:23 PM main bubbleSort
+INFO: [1, 2, 3, 4, 5, 7]
+дек. 04, 2022 5:41:23 PM main bubbleSort
+INFO: [1, 2, 3, 4, 5, 7]
+дек. 04, 2022 5:41:23 PM main bubbleSort
+INFO: [1, 2, 3, 4, 5, 7]
+дек. 04, 2022 5:41:23 PM main bubbleSort
+INFO: End sorting
